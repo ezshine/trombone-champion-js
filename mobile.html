@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+        <script>
+            var peer = new Peer();
+            var conn = peer.connect('71535c99-2ef1-4e82-aa54-9faafec711c4');
+            // on open will be launch when you successfully connect to PeerServer
+            
+            conn.on('open', function() {
+                    console.log("Sender Connection");
+                    // Receive messages
+                    // conn.on('data', function(data) {
+                    //     console.log('Received', data);
+                    // });
+
+                    // Send messages
+                    conn.send('Hello!');
+                });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
